@@ -23,6 +23,10 @@ main {
   object-fit: cover;
 }
 
+img:not(.page-logo) {
+  cursor: zoom-in;
+}
+
 h1 {
   text-align: center;
   font-size: 60px;
@@ -143,6 +147,12 @@ h4:before {
 
 .basement-slider {
   width: 100%;
+  background-color: rgba(187, 200, 219, 0.1);
+}
+
+.right-materials-slider {
+  max-width: 500px;
+  width: calc(100vw - 80px);
   background-color: rgba(187, 200, 219, 0.1);
 }
 
@@ -326,4 +336,149 @@ summary {
   .vote-slider {
     width: 300px;
   }
+}
+
+/* modal */
+
+/* The Modal (background) */
+.modal {
+  display: none;
+  /* Hidden by default */
+  position: fixed;
+  /* Stay in place */
+  z-index: 1;
+  /* Sit on top */
+  /* Location of the box */
+  left: 0;
+  top: 0;
+  /* Full width */
+  /* Full height */
+  overflow: auto;
+  /* Enable scroll if needed */
+  background-color: rgb(0, 0, 0);
+  /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.9);
+  /* Black w/ opacity */
+  cursor: zoom-out;
+  height: 100vh;
+  width: 100vw;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.4s;
+  opacity: 0;
+}
+
+/* Modal Content (image) */
+.modal-content {
+  margin: auto;
+  display: block;
+  max-height: calc(100% - 120px);
+}
+
+.modal-content {
+  cursor: zoom-out !important;
+}
+
+/* Caption of Modal Image */
+#caption {
+  margin: auto;
+  display: block;
+  width: 80%;
+  max-width: 700px;
+  text-align: center;
+  color: #ccc;
+  padding: 10px 0;
+  height: 150px;
+}
+
+/* Add Animation */
+.modal-content,
+#caption {
+  -webkit-animation-name: zoom;
+  -webkit-animation-duration: 0.6s;
+  animation-name: zoom;
+  animation-duration: 0.6s;
+}
+
+.out {
+  animation-name: zoom-out;
+  animation-duration: 0.6s;
+}
+
+@-webkit-keyframes zoom {
+  from {
+    -webkit-transform: scale(1)
+  }
+
+  to {
+    -webkit-transform: scale(2)
+  }
+}
+
+@keyframes zoom {
+  from {
+    transform: scale(0.4)
+  }
+
+  to {
+    transform: scale(1)
+  }
+}
+
+@keyframes zoom-out {
+  from {
+    transform: scale(1)
+  }
+
+  to {
+    transform: scale(0)
+  }
+}
+
+/* The Close Button */
+.close {
+  position: absolute;
+  top: 15px;
+  right: 35px;
+  color: #f1f1f1;
+  font-size: 40px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.close:hover,
+.close:focus {
+  color: #bbb;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* 100% Image Width on Smaller Screens */
+@media only screen and (max-width: 700px) {
+  .modal-content {
+    width: 100%;
+  }
+}
+
+.zoom {
+  background-position: 50% 50%;
+  position: relative;
+  overflow: hidden;
+  cursor: zoom-in;
+  height: calc(100% - 120px);
+  width: auto;
+  background-repeat: no-repeat;
+  position: relative;
+  background-size: 200%;
+}
+
+.zoom img:hover {
+  opacity: 0;
+}
+
+.zoom img {
+  transition: opacity .5s;
+  display: block;
+  max-width: 100%;
+  max-height: 100%;
 }
