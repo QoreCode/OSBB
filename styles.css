@@ -69,6 +69,7 @@ h4 {
   align-items: center;
   justify-content: start;
   flex-direction: row;
+  font-size: 20px;
 }
 
 h4:before {
@@ -151,8 +152,7 @@ h4:before {
 }
 
 .right-materials-slider {
-  max-width: 500px;
-  width: calc(100vw - 80px);
+  width: 100%;
   background-color: rgba(187, 200, 219, 0.1);
 }
 
@@ -200,6 +200,43 @@ summary {
 
 .gap30 {
   gap: 30px;
+}
+
+.list-of-work {
+  font-size: 18px;
+}
+
+.list-of-work li:not(:first-child) {
+  margin-top: 8px;
+}
+
+.two-media .slider-wrap {
+  width: calc(50% - 20px);
+}
+
+.simple-image {
+  width: 100%;
+}
+
+.card {
+  display: inline-block;
+  padding: 7px 12px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s;
+  line-height: 1em;
+}
+
+.card:hover {
+  background-color: #eee;
+}
+
+.top {
+  font-size: 30px;
+  font-weight: bold;
+  text-align: center;
+  margin: 140px 0;
 }
 
 @media (width <=768px) {
@@ -287,6 +324,11 @@ summary {
 
   .nine-flour-right {
     width: 100%;
+  }
+
+  .two-media .slider-wrap {
+    width: calc(100% - 20px);
+    max-width: 600px;
   }
 }
 
@@ -472,6 +514,12 @@ summary {
   background-size: 200%;
 }
 
+.zoom-width {
+  max-height: calc(100% - 120px);
+  height: auto
+}
+
+
 .zoom img:hover {
   opacity: 0;
 }
@@ -481,4 +529,5 @@ summary {
   display: block;
   max-width: 100%;
   max-height: 100%;
+  display: flex;
 }
